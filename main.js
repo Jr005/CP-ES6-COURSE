@@ -181,9 +181,182 @@
 
 // SPREAD OPERATOR VERY SIMILAR TO THE REST OPERATOR. YOU CAN COMBINE BOTH ARRAYS TOGETHER
 
-const clients = ["google", "facebook", "kmart"]
-const friends = ["Joe", "Matt", "Michael"]
+// const clients = ["google", "facebook", "kmart"]
+// const friends = ["Joe", "Matt", "Michael"]
 
-const listOfNames = [...clients, ...friends]
+// const listOfNames = [...clients, ...friends]
 
-console.log(listOfNames)
+// console.log(listOfNames)
+
+
+// ===================== **** DESTRUCTURING OBJECTS **** =====================
+
+
+// ****** QUESTION: How do we get access to those properties listed below? ******
+
+// var userInfo =  {
+//   name: "Mike",
+//   lastName: "santos",
+//   age: 29
+// }
+
+// ***** THE OLD WAY *****
+
+// var name = userInfo.name
+
+// console.log(name)
+
+
+// ***** USING DESTRUCTURING OBJECTS *****
+
+// var {name} = userInfo
+
+// console.log(name)
+
+
+// ***** BEING ABLE TO TARGET EACH PROPERTY *****
+
+// DECLARING EACH PROPERTY AS A VARIABLE BELOW
+
+// var {name, lastName, age} = userInfo
+
+// console.log(age)
+
+
+
+// ===================== **** DESTRUCTURING ARRAYS **** =====================
+
+// ***** THE OLD WAY *****
+
+// var cars = ['honda', 'bmw', 'benz']
+
+// var johnyCar = cars[0]
+// var joeCar = cars[1]
+// var jamesCar = cars[2]
+
+// console.log(jamesCar)
+
+
+// ***** USING ES6 *****
+
+
+// var cars = ['honda', 'bmw', 'benz']
+
+// var [johnyCar,rubenCar,alexCar] = cars
+
+// console.log(rubenCar)
+
+
+// ===================== **** forEACH METHOD **** =====================
+
+// LOOPING THROUGH AN ARRAY
+
+// var users = ["Joe", "Matt", "Barbara"]
+
+// OLD WAY
+
+// for (var i = 0; i < users.length; i++) {
+//   console.log(users[i])
+// }
+
+// LOOPING THROUGH ARRAY USING ES6 METHOD
+
+// NOTE: WE CAN NAME "USER" WHATEVER WE WANT IT CAN just "i" or whatever
+
+// users.forEach((user) => {
+//   console.log(user)
+// })
+
+
+// ===================== **** MAP METHOD **** =====================
+
+
+// NOTE: THE MAP METHOD IS GOOD WHEN YOU WANT TO TAKE DATA AND PUT IT INTO AN ARRAY
+
+// CODE BELOW IS ARRAY FULL OF OBJECTS
+
+// var users = [
+//   {name: "Joe", age: 29},
+//   {name: "Matt", age: 30},
+//   {name: "Tom", age: 42},
+
+// ]
+
+// var userNames = users.map((user) => {
+//   return user.age
+// })
+
+// console.log(userNames)
+
+// ===================== **** FILTER METHOD **** =====================
+// CODING PHASE FAVORITE
+
+// BELOW WE HAVE AN ARRAY WITH USERS AND WE WANT TO FILTER THINGS OUT
+
+// var users = [
+//   {name: "Joe", age: 29},
+//   {name: "Matt", age: 15},
+//   {name: "Tom", age: 10},
+
+// ]
+
+// LETS SAY WE WANT FILTER BY AN AGE
+
+// var newData = users.filter ((user) => {
+
+//   return user.age ==20
+// })
+
+// FILTER BY LETTER
+
+// var newData = users.filter ((user) => {
+
+//   var name = user.name.toLocaleLowerCase()
+//   name = name.startsWith('t')
+//   return name
+// })
+
+// FILTER USERS WHO ARE UNDER 18
+
+// var newData = users.filter ((user) => {
+
+
+//   return user.age < 18
+// })
+// console.log(newData)
+
+
+// ===================== **** FIND **** =====================
+
+// var users = [
+//   {name: "Joe", age: 29},
+//   {name: "Matt", age: 15},
+//   {name: "Tom", age: 10},
+
+// ]
+
+// // FIND USER
+
+// var newData = users.find ((user) => {
+
+//   return user.name == "Tom"
+// })
+// console.log(newData)
+
+
+// ===================== **** EVERY AND SOME METHODS **** =====================
+
+
+var users = [
+  {name: "Joe", age: 29},
+  {name: "Matt", age: 15},
+  {name: "Tom", age: 10},
+
+]
+
+// FIND USER
+
+var newData = users.find ((user) => {
+  return user.name == "Tom"
+})
+console.log(newData)
