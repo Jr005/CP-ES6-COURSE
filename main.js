@@ -345,18 +345,69 @@
 
 
 // ===================== **** EVERY AND SOME METHODS **** =====================
+// DOES EVERY USER ON OUR USERS LIST OVER 21 AND OLD ENOUGH TO DRINK
+// NOTE: A WAY TO FIND OUT IS TO USE THE EVERY METHOD
+
+// var users = [
+//   {name: "Joe", age: 29},
+//   {name: "Matt", age: 18},
+//   {name: "Tom", age: 18},
+//   {name: "Tom", age: 18},
+
+// ]
+
+// var newData = users.every((user) => {
+//   return user.age >= 21
+// })
+
+// if(newData) {
+//   console.log("Every one is over 21 and can drink all niht")
+// } else {
+//   console.log("Sorry only a few were able to drink")
+// }
+
+// console.log(newData)
 
 
-var users = [
-  {name: "Joe", age: 29},
-  {name: "Matt", age: 15},
-  {name: "Tom", age: 10},
 
-]
+// ===================== **** PROMISES **** =====================
 
-// FIND USER
 
-var newData = users.find ((user) => {
-  return user.name == "Tom"
-})
-console.log(newData)
+// LETS PRETEND WE ARE CONNECTING TO AN API AND DOING GET REQUEST USING AJAX AND WE GET BACK DATA FROM SERVER
+// WHICH IS AN ARRAY WITH AN OBJECT INSIDE OF IT
+
+// *** LIST OF THINGS WE NEED TO DO ***
+// GET PRODUCT
+// GET PRICE
+// PRINT TO THE SCREEN THE PRICE
+
+var products = [{
+  id: 1,
+  title: 'Sneakers',
+  price: 300
+}]
+
+const getProducts = new Promise ((resolve, reject) => 
+{
+
+  // CHECKING TO SEE IF THERE IS ANY PRODUCTS AVAILABLE
+
+  setTimeout(() => {
+
+    if(products.length >=1){
+      resolve(products)
+    } else {
+      reject(`Error: it returned back tat there's no products available`)
+    }
+
+  }, 2000 );
+});
+
+
+
+
+getProudcts.then(products => {
+
+  console.log(products);
+
+});
